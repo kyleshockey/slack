@@ -3,21 +3,12 @@
   "version": "6.1.0",
   "description": "Slack API client written in JS",
   "main": "methods/index",
-  "browser": {
-    "./methods/_exec.js": "./methods/_exec-browser.js",
-    "./methods/rtm.client.js": "./methods/rtm.client-browser.js",
-    "./test/_env.js": "./test/_env-browser.js"
-  },
   "scripts": {
     "start": "npm run build && ./scripts/repl",
     "build": "babel src --out-dir methods && cp src/api.json methods/api.json",
     "test": "npm run build && ./scripts/test",
     "btest": "npm run build && ./scripts/test-browser | browser-run | tap-spec",
     "prepublish": "npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/smallwins/slack.git"
   },
   "keywords": [
     "slack",
@@ -26,10 +17,6 @@
   ],
   "author": "Brian LeRoux <b@brian.io>",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/smallwins/slack/issues"
-  },
-  "homepage": "https://github.com/smallwins/slack#readme",
   "devDependencies": {
     "babel-cli": "^6.3.15",
     "babel-plugin-add-module-exports": "^0.1.1",
